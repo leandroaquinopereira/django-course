@@ -1,1 +1,4 @@
-# django-course
+# Django Course
+
+### Virtual Environment
+- venv
