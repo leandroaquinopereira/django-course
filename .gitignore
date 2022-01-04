@@ -1,6 +1,6 @@
 
-# Created by https://www.toptal.com/developers/gitignore/api/python,django,macos,pycharm
-# Edit at https://www.toptal.com/developers/gitignore?templates=python,django,macos,pycharm
+# Created by https://www.toptal.com/developers/gitignore/api/python,django,pycharm,macos
+# Edit at https://www.toptal.com/developers/gitignore?templates=python,django,pycharm,macos
 
 ### Django ###
 *.log
@@ -349,4 +349,4 @@ fabric.properties
 
 # Cython debug symbols
 
-# End of https://www.toptal.com/developers/gitignore/api/python,django,macos,pycharm
+# End of https://www.toptal.com/developers/gitignore/api/python,django,pycharm,macos
