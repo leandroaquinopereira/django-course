@@ -56,3 +56,24 @@ def remove_cidade(request, id):
     cidade.delete()
 
     return redirect('cidades-list')
+
+def editar_cidade(request, id):
+
+    cidade = get_object_or_404(Cidade, pk=id)
+    form = CidadeForm(request.POST or None, instance=cidade)
+
+    if request.method == 'POST':
+        form = CidadeForm(request.POST, instance=cidade)
+        if form.is_valid():
+            form.save()
+            return redirect('cidades-list')
+
+    context = {
+        'form': form,
+        'obj': cidade,
+    }
+
+    return render(request, 'cadastros/edita_cidades.html', context)
+
+
+
