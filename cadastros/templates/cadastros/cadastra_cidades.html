@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+    <h4>Nova Cidade:</h4>
+
+    <form action="{% url 'cidades-cadastro' %}" method="POST">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+<!--        <div class="mb-3">-->
+<!--            <label for="exampleFormControlInput1" class="form-label">Nome Cidade</label>-->
+<!--            <input type="text" name="nome" class="form-control" id="exampleFormControlInput1">-->
+<!--        </div>-->
+<!--        <div class="form-check">-->
+<!--            <input class="form-check-input" type="checkbox" name="nome" id="defaultCheck1">-->
+<!--            <label class="form-check-label" for="defaultCheck1">-->
+<!--                Capital-->
+<!--            </label>-->
+<!--        </div>-->
+
+        <div class="col-12" align="center">
+            <button class="btn btn-primary" type="submit">Salvar</button>
+        </div>
+
+    </form>
+
+{% endblock %}

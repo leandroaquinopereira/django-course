@@ -4,8 +4,8 @@ from django.db import models
 
 class Cidade(models.Model):
 
-    nome = models.CharField(max_length=100)
-    capital = models.BooleanField(default=False)
+    nome = models.CharField(max_length=100, unique=True)
+    capital = models.BooleanField(default=False, help_text='Check')
 
     def __str__(self):
         return self.nome
