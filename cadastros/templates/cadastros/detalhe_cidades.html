@@ -8,6 +8,8 @@
         <span class="badge bg-primary">Capital</span>
         {% endif %}
     </p>
+    <p>Estado: {{ cidade.estado|default_if_none:'-' }}</p>
+    <p>País: {{ cidade.estado.pais }}</p>
 
     <div class="col-12">
         {% if request.user.is_authenticated %}
