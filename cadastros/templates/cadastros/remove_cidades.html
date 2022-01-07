@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+    <h4>Remover Cidade</h4>
+
+    <form method="POST">
+        {% csrf_token %}
+        <p>Você deseja excluir "{{ cidade }}"?</p>
+        <input type="submit" class="btn btn-danger" value="Sim">
+    </form>
+
+{% endblock %}
