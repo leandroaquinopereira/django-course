@@ -1,4 +1,6 @@
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.messages.views import SuccessMessageMixin
 from django.core.exceptions import PermissionDenied
 from django.shortcuts import render, get_object_or_404, redirect
 
@@ -43,11 +45,12 @@ class CidadeCreate(CreateView):
     template_name = 'cadastros/cadastra_cidades.html'
     success_url = reverse_lazy('cidades-list')
 
-class CidadeUpdate(UpdateView):
+class CidadeUpdate(UpdateView, SuccessMessageMixin):
     model = Cidade
     form_class = CidadeForm
     template_name = 'cadastros/edita_cidades.html'
     success_url = reverse_lazy('cidades-list')
+    success_message = '!Cadastro Atualizado com Sucesso!'
 
 ### Outra Forma de realizar CRUD por meio de funcoes ###
 
@@ -117,6 +120,7 @@ class CidadeUpdate(UpdateView):
 #     cidade = get_object_or_404(Cidade, pk=id)
 #
 #     cidade.delete()
+#      messages.success('Removido com Sucesso')
 #
 #     return redirect('cidades-list')
 #

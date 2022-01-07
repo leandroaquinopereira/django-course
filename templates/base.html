@@ -18,6 +18,18 @@
 
     <div class="alert alert-primary" role="alert" align="center">Bem-vindo a página do {{ titulo }}</div>
 
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+        {% endfor %}
+    {% endif %}
+
     <!-- Bloco onde serao diferenciados em cada pagina -->
 
     {% block conteudo %}
