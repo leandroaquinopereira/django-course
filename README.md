@@ -26,26 +26,24 @@ Commands:
 
 `python manage.py runserver --settings=proj.settings_dev`
 
-- Configurar o runserver para rodar/debug direto pelo Pycharm.
-
-- Criar um novo app:
+- Create a new app:
 
 `django-admin startapp cadastros`
 
-- Criar as migrações para serem executadas no BD:
+- Create the migrations to run on the DB :
 
 `python manage.py makemigrations --settings=proj.settings_dev`
 
-- Executar as alterações no BD:
+- Run changes on the DB:
 
 `python manage.py migrate --settings=proj.settings_dev`
 
-- Criar um superusuário:
+- Create a new superuser:
 
 `python manage.py createsuperuser --settings=proj.settings_dev`
 
 
-- Configurar o pycharm para rodar o python console com suporte ao django:
+- Console with Django support:
 
 ```
 import sys, os, django
@@ -55,9 +53,9 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "proj.settings_dev")
 django.setup()
 ```
 
-- Instalar o ipython (para um console mais poderoso): `pip install ipython`
+- Ipython install (other console): `pip install ipython`
 
-- Utilizar o proxy para dar build na imagem:
+- Use the proxy to build the image:
 
 ```
 docker build -t sidia/local:1.0 --build-arg http_proxy=http://PROXY_IP:PROXY_PORT --build-arg https_proxy=http://PROXY_IP:PROXY_PORT .
@@ -65,7 +63,7 @@ docker image pull mdillon/postgis (+proxy)
 docker image ls
 ```
 
-Para leitura
+For Reading
 ===
 
  - https://12factor.net/pt_br/
